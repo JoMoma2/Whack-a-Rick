@@ -1,0 +1,76 @@
+body {
+    cursor: none; /* Hide the system cursor */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-image: url('images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Heading styles */
+h1 {
+    color: #333;
+}
+
+/* Score text styles */
+p {
+    font-size: 1.5em;
+}
+
+/* Whack-a-Mole Game Grid */
+.game {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin: 20px auto;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Mole Hole and Mole Elements */
+.mole-hole {
+    width: 100px;
+    height: 130px;
+    position: relative;
+    overflow: hidden;
+}
+
+.mole {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: -150%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: bottom 0.3s;
+}
+
+.mole-hole.up .mole {
+    bottom: -10%;
+}
+
+/* Start Button */
+#startButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#mallet-cursor {
+    width: 4%;
+    height: auto; /* Maintain aspect ratio */
+    position: absolute;
+    pointer-events: none;
+    transition: transform 0.2s ease-out;
+}
+
+.swing {
+    transform: rotate(-180deg);
+}
